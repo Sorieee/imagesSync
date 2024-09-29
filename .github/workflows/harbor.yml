@@ -25,13 +25,13 @@ jobs:
 
     - name: Allow Insecure Registries
       run: |
-        echo '{ "insecure-registries": ["http://61.128.133.74:86"] }' | sudo tee /etc/docker/daemon.json
+        echo '{ "insecure-registries": ["http://47.96.73.6:86"] }' | sudo tee /etc/docker/daemon.json
         sudo systemctl restart docker
 
     - name: Login to Docker Hub
       uses: docker/login-action@v2.2.0
       with:
-        registry: 61.128.133.74:86
+        registry: 47.96.73.6:86
         username: ${{ secrets.UNI_HABOR_NAME }}
         password: ${{ secrets.UNI_HABOR_PASSWORD }}
         logout: false
@@ -39,4 +39,4 @@ jobs:
     - name: Use Skopeo to Sync Image to Insecure Harbor Registry
       run: |
         #!/usr/bin/env bash
-        skopeo copy --dest-tls-verify=false docker://docker.io/nacos/nacos-server:v2.3.0 docker://61.128.133.74:86/common/nacos-server:v2.3.0
+        skopeo copy --dest-tls-verify=false docker://docker.io/nacos/nacos-server:v2.3.0 docker://47.96.73.6:86/common/nacos-server:v2.3.0
