@@ -39,4 +39,4 @@ jobs:
     - name: Use Skopeo to Sync Image to Insecure Harbor Registry
       run: |
         #!/usr/bin/env bash
-        skopeo copy --dest-tls-verify=false docker://docker.io/hhyo/archery:v1.11.3 docker://61.128.133.74:86/common/archery:v1.11.3
+        skopeo copy --dest-tls-verify=false docker://docker.io/redis:5 docker://61.128.133.74:86/common/redis:5
