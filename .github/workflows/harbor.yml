@@ -39,4 +39,4 @@ jobs:
     - name: Use Skopeo to Sync Image to Insecure Harbor Registry
       run: |
         #!/usr/bin/env bash
-        skopeo copy --dest-tls-verify=false docker://docker.io/bitnami/mongodb:7.0 docker://61.128.133.74:86/common/mongodb:7.0
+        skopeo copy --dest-tls-verify=false docker://docker.io/bitnami/mongodb:4.2.20 docker://61.128.133.74:86/common/mongodb:4.2.20
