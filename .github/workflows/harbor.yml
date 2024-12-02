@@ -39,5 +39,5 @@ jobs:
     - name: Use Skopeo to Sync Image to Insecure Harbor Registry
       run: |
         #!/usr/bin/env bash
-        skopeo copy --dest-tls-verify=false docker://docker.io/rancher/shell:v0.1.6 docker://x454262h22.qicp.vip:86/rancher/shell:v0.1.6
+        skopeo copy --dest-tls-verify=false docker://docker.io/rancher/fleet:v0.3.5 docker://x454262h22.qicp.vip:86/rancher/fleet:v0.3.5
        
