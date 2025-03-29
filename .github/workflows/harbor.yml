@@ -39,4 +39,6 @@ jobs:
     - name: Use Skopeo to Sync Image to Insecure Harbor Registry
       run: |
         #!/usr/bin/env bash
-        skopeo copy --dest-tls-verify=false docker://docker.io/langgenius/dify-plugin-daemon:0.0.6-local docker://x454262h22.qicp.vip:86/common/langgenius/dify-plugin-daemon:0.0.6-local
+        docker pull langgenius/dify-plugin-daemon:0.0.6-local
+        docker tag langgenius/dify-plugin-daemon:0.0.6-local:x454262h22.qicp.vip:86/common/langgenius/dify-plugin-daemon:0.0.6-local
+        docker push x454262h22.qicp.vip:86/common/langgenius/dify-plugin-daemon:0.0.6-local
